@@ -17,8 +17,8 @@ class CreateSucursalTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('direccion');
-            $table->decimal('latitud', 10, 7);
-            $table->decimal('longitud', 10, 7);
+            $table->string('horario', 30);
+            $table->string('telefono', 12)->nullable();
             $table->timestamps();
         });
     }

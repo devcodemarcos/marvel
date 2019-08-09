@@ -6,10 +6,18 @@
 
 <div id="main">
     <div class="inner">
-        <h1>MARVEL</h1>
+        <h1 class="marvel_logo">MARVEL</h1>
         <span class="image main"><img src="{{ asset('images/wallpaper.gif') }}" alt="" /></span>
-        <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+        <p>
+            Marvel Comics fue fundada por Martin Goodman en 1939, con un número constante de cambios de nombre y fracasos de lanzamiento. 
+            Originalmente fue conocida como Red Circle Comics, Atlas Comics; aunque el nombre más popular (antes de Marvel Comics) es Timely Comics y su primera publicación importante fue el Marvel Comics #1 (octubre de 1939) y también por el cual recibe su nombre actual, en el que aparecía por primera vez un superhéroe, el héroe de guerra la Antorcha Humana original y el antihéroe Namor, el hombre submarino. Ambos personajes se convirtieron en grandes éxitos para la compañía protagonizando casi instantáneamente sus propias series. Otro superhéroe popular creado en esas fechas era el personaje patriótico Capitán América.
+        </p>
         <section>
+            @if (session('status'))
+                <blockquote>
+                    {{ session('status') }}
+                </blockquote>
+            @endif
             <h3>Sucursales de México</h3>
             <div class="table-wrapper">
                 <table>
@@ -18,18 +26,28 @@
                             <th>#</th>
                             <th>Nombre de la sucursal</th>
                             <th>Dirección</th>
-                            <th>Información completa</th>
+                            <th>Lista de comics</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach ($sucursales as $index => $sucursal)
+                    @if(count($sucursales) > 0)
+                        @foreach ($sucursales as $index => $sucursal)
+                        <tr>
+                            <td>{{ ++$index }}</td>
+                            <td>{{ $sucursal->nombre }}</td>
+                            <td>{{ $sucursal->direccion }}</td>
+                            <td align="center"><a href="{{ url('/sucursal/' . $sucursal->id . '/comics') }}">Ver</a></td>
+                            <td>
+                                <a href="{{ url('/sucursal/' . $sucursal->id . '/editar') }}" class="button primary small">Editar</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    @else
                     <tr>
-                        <td>{{ ++$index }}</td>
-                        <td>{{ $sucursal->nombre }}</td>
-                        <td>{{ $sucursal->direccion }}</td>
-                        <td><a href="{{ url('/sucursal/' . $sucursal->id . '/comics') }}">Más info</a></td>
+                        <td colspan="5">No hay sucursales registradas</td>
                     </tr>
-                    @endforeach
+                    @endif
                     </tbody>
                 </table>
             </div>

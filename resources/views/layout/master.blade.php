@@ -6,6 +6,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
 		<noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" /></noscript>
+		<style>
+			.marvel_logo {
+				color: #ffffff;
+				background-color: #d60000;
+				width: 20%;
+				text-align: center;
+				padding: 10px 5px 10px 5px;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -28,8 +37,8 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="{{ url('/') }}">Inicio</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="{{ url('/sucursal/registro') }}">Sucursal registro</a></li>
+							<li><a href="#">Comics</a></li>
 						</ul>
 					</nav>
 
@@ -68,5 +77,6 @@
 			<script src="{{ asset('assets/js/util.js') }}"></script>
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 
+			@yield('javascript')
 	</body>
 </html>

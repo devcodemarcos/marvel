@@ -6,7 +6,7 @@
 
 <div id="main">
         <div class="inner">
-            <h1>De venta en {{ $inventario->sucursal->nombre }}</h1>
+            <h1>De venta en <span style="text-decoration: underline">{{ $inventario->sucursal->nombre }}</span></h1>
             <!-- Image -->
                 <section>
                     <h3>{{ $comic->title }}</h3>
@@ -14,7 +14,7 @@
                         <span class="image left">
                             <img src="{{ $comic->thumbnail->path . '/standard_fantastic.' . $comic->thumbnail->extension }}" alt="">
                         </span>
-                        {!! $comic->description != '' ? $comic->description : 'N/A<br/>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ab consectetur veritatis alias? Amet, dicta distinctio similique quam, hic magnam iste iusto voluptatem consequuntur ipsa optio consequatur sed, cupiditate deserunt.' !!}
+                        {!! $comic->description != '' ? $comic->description : '<b>No disponible</b><br/>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ab consectetur veritatis alias? Amet, dicta distinctio similique quam, hic magnam iste iusto voluptatem consequuntur ipsa optio consequatur sed, cupiditate deserunt.' !!}
                     </p>
                     <p>Número de páginas: <b>{{ (int)$comic->pageCount > 0 ? $comic->pageCount : 'No disponible' }}</b></p>
                     <hr>
