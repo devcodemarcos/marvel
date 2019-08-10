@@ -20,6 +20,7 @@
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Imagen</th>
+                                    <th>Información</th>
                                     <th>Más</th>
                                 </tr>
                             </thead>
@@ -28,11 +29,12 @@
                                     @foreach ($data as $index => $comic)
                                     <tr>
                                         <td>
-                                            <a href="{{ url('/comic/' . $comic->id) }}">{{ $comic->title }}</a>
+                                            {{ $comic->title }}
                                         </td>
                                         <td>
                                             <img src="{{ $comic->thumbnail->path . '/standard_small.' . $comic->thumbnail->extension }}" alt="">
                                         </td>
+                                        <td><a href="{{ url('/comic/' . $comic->id) }}">Ver más</a></td>
                                         <td>
                                             <input type="checkbox" id="verificacion-{{ $index }}" name="verificacion-{{ $index }}" checked >
                                             <label for="verificacion-{{ $index }}"></label>
@@ -48,23 +50,6 @@
                         </table>
                     </div>
             </section>
-
-            {{-- <section class="tiles">
-                @foreach ($data as $index => $comic)
-                <article class="style{{ ++$index }}">
-                    <span class="image">
-                        <img src="{{ $comic->thumbnail->path . '/standard_fantastic.' . $comic->thumbnail->extension }}" alt="">
-                    </span>
-                    <a href="{{ url('/comic/' . $comic->id) }}">
-                        <h2>{{ $comic->title }}</h2>
-                        <div class="content">
-                            <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                        </div>
-                    </a>
-                </article>
-                @endforeach
-            </section> --}}
-
         </div>
     </div>
 
@@ -72,7 +57,7 @@
 
 @section('javascript')
 <script>
-    function sortTable() {
+    let sortTable = function () {
         var table, rows, switching, i, x, y, shouldSwitch;
         table = document.getElementById("myTable");
         switching = true;
