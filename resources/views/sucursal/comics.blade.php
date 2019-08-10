@@ -20,7 +20,6 @@
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Imagen</th>
-                                    {{-- <th>Información extra</th> --}}
                                     <th>Más</th>
                                 </tr>
                             </thead>
@@ -28,11 +27,12 @@
                                 @if(count($data) > 0)
                                     @foreach ($data as $index => $comic)
                                     <tr>
-                                        <td>{{ $comic->title }}</td>
+                                        <td>
+                                            <a href="{{ url('/comic/' . $comic->id) }}">{{ $comic->title }}</a>
+                                        </td>
                                         <td>
                                             <img src="{{ $comic->thumbnail->path . '/standard_small.' . $comic->thumbnail->extension }}" alt="">
                                         </td>
-                                        {{-- <td align="center"><a href="{{ url('/comic/' . $comic->id) }}">Ver más</a></td> --}}
                                         <td>
                                             <input type="checkbox" id="verificacion-{{ $index }}" name="verificacion-{{ $index }}" checked >
                                             <label for="verificacion-{{ $index }}"></label>

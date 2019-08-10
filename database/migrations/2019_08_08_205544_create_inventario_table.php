@@ -18,7 +18,7 @@ class CreateInventarioTable extends Migration
             $table->integer('comic_id');
             $table->unsignedInteger('sucursal_id');
             $table->timestamps();
-            $table->foreign('sucursal_id')->references('id')->on('sucursales');
+            $table->foreign('sucursal_id')->references('id')->on('sucursales')->onDelete('cascade');
         });
     }
 

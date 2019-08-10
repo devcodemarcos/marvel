@@ -50,14 +50,21 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Follow</h2>
+								<h2>Marcos Villavicencio</h2>
 								<ul class="icons">
+									<li>
+										<a href="http://engixpro.com/" target="_blank" class="icon brands style2">
+												<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+												width="16" height="16"
+												viewBox="0 0 16 16"
+												style=" fill:#000000;"><g id="surface1"><path style=" " d="M 4 2 C 2.902344 2 2 2.902344 2 4 L 2 12 C 2 13.097656 2.902344 14 4 14 L 12 14 C 13.097656 14 14 13.097656 14 12 L 14 4 C 14 2.902344 13.097656 2 12 2 Z M 4 3 L 12 3 C 12.558594 3 13 3.441406 13 4 L 13 12 C 13 12.558594 12.558594 13 12 13 L 4 13 C 3.441406 13 3 12.558594 3 12 L 3 4 C 3 3.441406 3.441406 3 4 3 Z M 7 4 L 7 5 L 10.292969 5 L 6.023438 9.273438 L 6.726563 9.976563 L 11 5.707031 L 11 9 L 12 9 L 12 4 Z "></path></g></svg>
+										</a>
+									</li>
 									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
 									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
 									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
