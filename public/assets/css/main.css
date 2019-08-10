@@ -2572,8 +2572,9 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		postiion: relative;
-		margin: -2.5em 0 0 -2.5em;
+		position: relative;
+		/* margin: -2.5em 0 0 -2.5em; */
+		/* margin: -2em 0 0 -2em; */
 	}
 
 		.tiles article {
@@ -2582,8 +2583,14 @@ input, select, textarea {
 			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
 			transition: transform 0.5s ease, opacity 0.5s ease;
 			position: relative;
-			width: calc(33.33333% - 2.5em);
-			margin: 2.5em 0 0 2.5em;
+			/* width: calc(33.33333% - 2.5em); */
+			/* margin: 2.5em 0 0 2.5em; */
+			/* width: calc(25% - 2em); */
+			width: 25%;
+			/* margin: 2em 0 0 2em; */
+			/* margin: 1rem 0 0 0; */
+			flex: 1 0 21%;
+			margin: 1rem;
 		}
 
 			.tiles article > .image {

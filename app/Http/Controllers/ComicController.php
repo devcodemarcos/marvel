@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Marvel;
 use App\Inventario;
 
 class ComicController extends Controller
 {
+    public function obtener_comics()
+    {
+        $marvel = new Marvel;
+        $comics = $marvel->comics();
+        return view('comics.comics', compact('comics'));
+    }
+
     public function comic_by_id($id)
     {
         $marvel = new Marvel;

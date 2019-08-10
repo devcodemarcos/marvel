@@ -23,7 +23,8 @@ Route::post('/sucursal/registro', 'SucursalController@registro');
 Route::get('/sucursal/{sucursal}/editar', 'SucursalController@editar_form')->name('edita_sucursal');
 Route::post('/sucursal/editar', 'SucursalController@editar');
 Route::post('/sucursal/{sucursal}/eliminar', 'SucursalController@eliminar');
-Route::get('/comic/{comic}', 'ComicController@comic_by_id');
 
+Route::get('/comics', 'ComicController@obtener_comics');
+Route::get('/comic/{comic}', 'ComicController@comic_by_id');
 
 Route::get('/test', 'SucursalController@test');

@@ -6,7 +6,7 @@
 
 <div id="main">
         <div class="inner">
-            <h1>De venta en <span style="text-decoration: underline">{{ $inventario->sucursal->nombre }}</span></h1>
+            <h1><span style="text-decoration: underline">{{ is_null($inventario) ? 'No disponible en tienda todavía' : 'De venta en ' . $inventario->sucursal->nombre }}</span></h1>
             <!-- Image -->
                 <section>
                     <h3>{{ $comic->title }}</h3>

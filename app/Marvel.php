@@ -3,56 +3,45 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use function GuzzleHttp\json_decode;
 
 class Marvel extends Model
 {
-    private $ts;
-    private $public_key;
-    private $private_key;
-    private $hash;
     private $config;
 
     public function __construct()
     {
-        $this->ts = 1;
-        $this->public_key = ENV('MARVEL_PUBLIC_KEY');
-        $this->private_key = ENV('MARVEL_PRIVATE_KEY');
-        $md5 = $this->ts . $this->private_key . $this->public_key;
-        $this->hash = md5($md5);
-        $this->config = "ts={$this->ts}&apikey={$this->public_key}&hash={$this->hash}";
+        $ts = 1;
+        $custom_key = $ts . ENV('MARVEL_PRIVATE_KEY') . ENV('MARVEL_PUBLIC_KEY');
+        $hash = md5($custom_key);
+        $this->config = "ts={$ts}&apikey=" . ENV('MARVEL_PUBLIC_KEY') . "&hash={$hash}";
     }
 
     public function comic_by_id($id)
     {
         $url = "https://gateway.marvel.com:443/v1/public/comics/{$id}?{$this->config}";
-        $datos = $this->simple_curl($url);
+        $datos = $this->get_data($url);
         return $datos->data->results[0];
     }
 
     public function character($url)
     {
         $full_url = "{$url}?{$this->config}";
-        $datos = $this->simple_curl($full_url);
+        $datos = $this->get_data($full_url);
         return $datos->data->results[0];
     }
 
-
-
-
     public function comics()
     {
-        $url = "https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&offset=10&{$this->config}";
-        return $this->simple_curl($url);
+        $limite = 36;
+        $url = "https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&limit={$limite}&{$this->config}";
+        $datos = $this->get_data($url);
+        return $datos->data->results;
     }
 
-    private function simple_curl($url)
+    private function get_data($url)
     {
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $data = curl_exec($ch);
-        curl_close($ch);
+        $data = file_get_contents($url);
         return json_decode($data);
     }
 }

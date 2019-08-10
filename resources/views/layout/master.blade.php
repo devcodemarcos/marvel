@@ -38,7 +38,7 @@
 						<ul>
 							<li><a href="{{ url('/') }}">Inicio</a></li>
 							<li><a href="{{ url('/sucursal/registro') }}">Sucursal registro</a></li>
-							<li><a href="#">Comics</a></li>
+							<li><a href="{{ url('/comics') }}">Comics</a></li>
 						</ul>
 					</nav>
 
