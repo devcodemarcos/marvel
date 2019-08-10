@@ -9,12 +9,13 @@
 
 ## 1.-
 - Clonar el proyecto marvel
-- $ cd path/clone/project/marvel
+- $ cd path/to/clone/project/marvel
+- $ php artisan key:generate
 - $ composer install
 
 ## 2.-
 
-Agregar estas dos constantes sus respectivos valores en el archivo .env
+Agregar estas dos constantes con respectivos valores al final del archivo .env
 
 - MARVEL_PUBLIC_KEY=your_public_key
 - MARVEL_PRIVATE_KEY=your_private_key
