@@ -80,13 +80,4 @@ class SucursalController extends Controller
         $sucursal->delete();
         return redirect()->route('inicio')->with('status', 'Sucursal eliminada correctamente');
     }
-
-    public function test()
-    {
-        $marvel = new Marvel;
-        $data = $marvel->comics();
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-    }
 }

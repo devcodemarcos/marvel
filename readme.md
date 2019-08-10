@@ -8,7 +8,7 @@
 
 ## 2.-
 
-Agregar estas dos constantes con respectivos valores al final del archivo .env
+Agregar estas dos constantes con sus respectivos valores al final del archivo .env
 
 - MARVEL_PUBLIC_KEY=your_public_key
 - MARVEL_PRIVATE_KEY=your_private_key

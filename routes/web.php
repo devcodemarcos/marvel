@@ -26,5 +26,3 @@ Route::post('/sucursal/{sucursal}/eliminar', 'SucursalController@eliminar');
 
 Route::get('/comics', 'ComicController@obtener_comics');
 Route::get('/comic/{comic}', 'ComicController@comic_by_id');
-
-Route::get('/test', 'SucursalController@test');
