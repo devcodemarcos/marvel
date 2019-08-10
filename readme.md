@@ -10,6 +10,7 @@
 ## 1.-
 - Clonar el proyecto marvel
 - $ cd path/to/clone/project/marvel
+- $ cp .env.example .env
 - $ php artisan key:generate
 - $ composer install
 
