@@ -6,7 +6,16 @@
 
 <div id="main">
         <div class="inner">
-            <h1><span style="text-decoration: underline">{{ is_null($inventario) ? 'No disponible en tienda todavía' : 'De venta en ' . $inventario->sucursal->nombre }}</span></h1>
+            @if(count($inventario) > 0)
+            <h1>De venta en</h1>
+            <ul>
+            @foreach ($inventario as $sucursal)
+                <li><a href="#">{{ $sucursal->sucursal->nombre }}</a></li>
+            @endforeach
+            </ul>
+            @else
+            <p>No disponible en tienda todavía</p>
+            @endif
             <!-- Image -->
                 <section>
                     <h3>{{ $comic->title }}</h3>

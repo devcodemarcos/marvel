@@ -19,7 +19,8 @@ class ComicController extends Controller
         $marvel = new Marvel;
         $inventario = new Inventario;
 
-        $inventario = $inventario::where('comic_id', $id)->first();
+        $inventario = $inventario::where('comic_id', $id)->get();
+        
         $comic = $marvel->comic_by_id($id);
         $personajes = array();
 
